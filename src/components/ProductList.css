@@ -1,0 +1,115 @@
+.ProductListContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    min-height: 90vh;
+    width: 100%;
+    background-color: beige;
+}
+
+.PLCTitle{
+    font-size: 50px;
+    padding: 50px 0px;
+    text-decoration: underline;
+    text-decoration-color: greenyellow;
+    text-decoration-thickness: 5px;
+}
+
+.ListContainer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80vw;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.Search{
+    display: flex;
+    min-width: 300px;
+    width: 60%;
+    flex-grow: 1;
+    justify-content: center;
+    margin-top: 50px;
+}
+.Search input{
+    width: 40%;
+    height: 2rem;
+    border: none;
+    min-width: 150px;
+    padding: 5px 10px;
+    font-size: larger;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+
+}
+.Search input:focus{
+    outline: none;
+    width: 100%;
+}
+
+
+.Search button{
+    height: 2rem;
+    padding: 0 10px;
+    font-size: larger;
+    cursor: pointer;
+    border: none;
+    background-color: greenyellow;
+    transition: all 0.2s ease;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+.Search button:hover{
+    background-color: green;
+}
+.LoadingContainer{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: beige;
+}
+.LoadingContainer h1{
+    font-size: 70px;
+}
+.LoadingContainer span{
+    color: greenyellow;
+}
+.errorContainer{
+    background: beige;
+    min-height: 90vh;
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.errMsg h1{
+    font-size: 70px;
+}
+.errMsg span{
+    color: greenyellow;
+}
+@media(max-width:1024px){
+    .ListContainer{
+        width: 100vw;
+    }
+}
+@media(max-width:767px){
+    .Search input{
+        width: 100%;
+    }
+    .PLCTitle{
+        font-size: 35px;
+    }
+}
+@media(max-width:425px){
+    .PLCTitle{
+        font-size: 25px;
+    }
+    .ListContainer{
+        padding: 0px;
+    }
+    
+}

@@ -1,0 +1,106 @@
+.HeaderContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+    width: 100%;
+    background-color: black;
+    color: white;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+.HeaderTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.HeaderTitle h1 {
+    color: yellowgreen;
+    text-align: center;
+}
+
+.menu {
+    position: relative;
+}
+
+.menubar {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    padding: 10px;
+}
+
+.Navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
+.Navigation ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.Navigation ul li {
+    cursor: pointer;
+    padding: 10px;
+    transition: all 0.2s ease;
+    font-size: larger;
+    border-radius: 3px;
+    text-decoration: none;
+    color: white;
+}
+
+.Navigation ul li:hover {
+    transform: scale(1.1);
+    background: greenyellow;
+    color: black;
+}
+
+.cartIcon {
+    color: greenyellow;
+    padding-right: 30px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 767px) {
+    .menubar {
+        display: flex;
+    }
+
+    .Navigation ul {
+        display: none; /* Hide the menu by default */
+        flex-direction: column;
+        position: absolute;
+        top: 10vh;
+        left: 0;
+        width: fit-content;
+        background-color: black;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+        padding: 10px 0;
+    }
+
+    .Navigation ul.visible {
+        display: flex; /* Show the menu when toggled */
+    }
+
+    .Navigation ul li {
+        padding: 15px 20px;
+        text-align: left;
+        font-size: medium;
+        
+    }
+    .HeaderTitle h1{
+        font-size: x-large;
+    }
+}

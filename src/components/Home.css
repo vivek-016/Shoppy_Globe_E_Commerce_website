@@ -1,0 +1,83 @@
+
+
+.HomeContainer{
+    height: 90vh;
+    width: 100vw;
+    background: url("/src/assets/microsoft-edge-z51MPaW5VfM-unsplash.jpg");
+    display: flex;
+    flex-direction: column;
+    background-position: center;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.Welcome h1{
+    font-size: 4rem;
+    color: white;
+    text-align: center;
+}
+.Welcome h1 span{
+    color: yellowgreen;
+
+}
+.WTitle2{
+    padding-bottom: 50px;
+}
+
+.Welcome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Welcome h2{
+    font-size: 1.5rem;
+    width: 40vw;
+    text-align: center;
+    color: lightgrey;
+}
+.HomeContainer button{
+    height: 50px;
+    width: 150px;
+    margin-bottom: 50px;
+    cursor: pointer;
+    background-color: yellowgreen;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    box-shadow: 0px 4px 8px rgb(0, 0, 0, 0.5);
+    transition: all 0.2s ease;
+}
+.HomeContainer button:hover{
+    transform: scale(1.1);
+    background-color: black;
+    color: yellowgreen;
+    border: 2px solid yellowgreen;
+}
+
+@media(max-width:767px){
+    .Welcome h1{
+        font-size: 3rem;
+    }
+    .Welcome h2{
+        width: 70vw;
+
+    }
+}
+@media(max-width:425px){
+    .HomeContainer{
+        background: beige;
+    }
+    .Welcome h1{
+        color: black;
+    }
+    .Welcome h1 span{
+        color: green;
+    }
+    .Welcome h2{
+        color: darkgrey;
+    }
+}

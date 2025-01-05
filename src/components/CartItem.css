@@ -1,0 +1,125 @@
+.CartItemThumbnail {
+    height: 300px;
+    width: 300px;
+    background-color: greenyellow;
+    margin: 8px 8px;
+    border-radius: 10px;
+    
+    transition: all 0.3s ease; 
+}
+
+.CartItemThumbnail:hover{
+    background: black;
+    border: 5px solid greenyellow
+}
+.CartItemThumbnail img{
+    height: 300px;
+    width: 300px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+}
+
+
+.CartItemContainer{
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.CartIteminfo{
+    width: 300px;
+    padding: 0px 8px;
+}
+.CartIteminfo h1{
+    margin: 10px 0px;
+    font-size: x-large;
+    cursor: pointer;
+    
+    transition: all 0.2s ease;
+    color: black;
+    text-align: center;
+}
+.CartIteminfo h1:hover{
+    color: green;
+    
+    
+}
+
+.CartIteminfo p{
+    
+    max-height: calc(1.15rem*3);
+    overflow: hidden;
+    margin: 10px 0px;
+}
+
+.Btns {
+    
+    margin: 10px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.Btns button{
+    height: 50px;
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    background: greenyellow;
+    border: none;
+    cursor: pointer;
+    font-size: larger;
+    margin: 0px 5px;
+    transition: all 0.2s ease;
+}
+
+.Btns button:hover{
+    background: black;
+    color: greenyellow;
+    transform: scale(1.1);
+    border: 3px solid greenyellow;
+}
+
+@media(max-width:767px){
+    .CartItemThumbnail{
+        height: 250px;
+        width: 250px;
+    }
+    .CartItemThumbnail img{
+        height: 250px;
+        width: 250px;
+    }
+    .CartIteminfo{
+        width: 250px;
+    }
+}
+@media(max-width:426px){
+    .CartItemThumbnail{
+        height: 150px;
+        width: 150px;
+        margin: 2px 2px;
+    }
+    .CartItemThumbnail img{
+        height: 150px;
+        width: 150px;
+    }
+    .CartIteminfo{
+        width: 150px;
+        padding: 0px;
+    }
+    .CartItemContainer{
+        margin: 0px;
+    }
+    .Btns button{
+        padding: 10px 10px;
+        font-size: large;
+    }
+    .CartIteminfo h1{
+        font-size: large;
+    }
+}
+
