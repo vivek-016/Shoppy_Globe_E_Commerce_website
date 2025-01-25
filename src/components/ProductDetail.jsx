@@ -12,7 +12,7 @@ function ProductDetail() {
     
     
 
-    const {data,loading, error} = useFetchProducts("https://dummyjson.com/products")
+    const {data,loading, error} = useFetchProducts(`http://localhost:3000/api/products/${params._id}`)
 
     if(loading) {
         return(
@@ -29,8 +29,6 @@ function ProductDetail() {
         return <h1>Error: {error}</h1>
     }
 
-    const details = data.find(data=>data.id == params.id);
-
     
     
 
@@ -40,13 +38,13 @@ function ProductDetail() {
         
             <div className="detailsContainer">
                 <div className="detailsImg">
-                    <img src={details.thumbnail} alt="" />
+                    <img src={data.thumbNail} alt="" />
                 </div>
                 <div className="detailsInfo">
-                    <h1>Product Name: {details.title}</h1>
-                    <div className="description"><h1>Description: </h1><h2>{details.description}</h2></div>
-                    <h1>Price: {details.price}</h1>
-                    <h1>Rating: {details.rating}</h1>
+                    <h1>Product Name: {data.title}</h1>
+                    <div className="description"><h1>Description: </h1><h2>{data.description}</h2></div>
+                    <h1>Price: {data.price}</h1>
+                    <h1>Rating: {data.rating}</h1>
                     
                 </div>
                 

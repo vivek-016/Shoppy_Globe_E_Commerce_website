@@ -45,7 +45,7 @@ const appRouter = createBrowserRouter([
           </Suspense>
       },
       {
-        path:"/ProductList/:id",
+        path:"/ProductList/:_id",
         element:
           <Suspense fallback={
             <div>Loading...</div>
@@ -64,7 +64,7 @@ const appRouter = createBrowserRouter([
           </Suspense>
       },
       {
-        path:"/Cart/:id",
+        path:"/Cart/:_id",
         element: 
           <Suspense fallback={
             <div>Loading...</div>

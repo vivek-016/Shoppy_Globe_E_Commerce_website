@@ -1,20 +1,38 @@
-import { useSelector } from "react-redux";
+
 import CartItem from "./CartItem";
 import './Cart.css';
-import { useDispatch } from "react-redux";
+
 import { clearCart } from "../utils/cartSlice";
 import { Link } from "react-router-dom";
+import useFetchProducts from "../utils/useFetchProducts.js";
 
 function Cart() {
 
-    const dispatch = useDispatch();
-    const cartItems = useSelector((store)=>store.cart.items);
+    const {data,loading,error} = useFetchProducts("http://localhost:3000/api/cart")
 
-    const handleClearCart = ()=>{
-        dispatch(clearCart());
+
+    if (loading) {
+        return(
+
+            <div className="LoadingContainer">
+                <h1>Loading<span>....</span></h1>
+            </div>
+
+        )
     }
 
-    if(cartItems.length==0){
+    if(error){
+        return(
+
+            <div className="errorContainer">
+                <div className="errMsg">
+                    <h1><span>Error: </span>{error}</h1>
+                </div>
+            </div>
+        )
+    } 
+
+    if(data.length==0){
         return(
             <div className="emptyContainer">
                 <div className="emptyImg">
@@ -39,15 +57,11 @@ function Cart() {
             <div className="CartListContainer">
                 <h1 className="CLCTitle">Products in Cart</h1>
                 <div className="ListContainer">
-                    {cartItems.map((Cart)=>(
-                        <CartItem key={Cart.id} itemData={Cart}/>
+                    {data.map((Cart)=>(
+                        <CartItem key={Cart._id} itemData={Cart}/>
                     ))}
                 </div>
-                <div className="Btns">
-                    <button onClick={handleClearCart}>
-                        ClearCart
-                    </button>
-                </div>
+                
             </div>
         
         </>

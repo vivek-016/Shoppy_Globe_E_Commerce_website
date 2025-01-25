@@ -17,7 +17,7 @@ const useFetchProducts = (url)=> {
                     throw new Error('Error fetching Data.');
                 }
                 const result = await response.json();
-                setData(result.products)
+                setData(result)
             }
             catch(err){
                 setError(err.message);

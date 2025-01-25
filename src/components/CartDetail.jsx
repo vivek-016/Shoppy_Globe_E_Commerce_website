@@ -1,16 +1,39 @@
 import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import { useParams } from "react-router-dom";
+import useFetchProducts from "../utils/useFetchProducts.js";
 import './CartDetail.css';
 
 
 function CartDetail(){
 
     const params = useParams();
-    const cartItems = useSelector((store)=>store.cart.items);
-    const Details = cartItems.find(data=>data.id == params.id);
+    const {data,loading,error} = useFetchProducts(`http://localhost:3000/api/cart/${params._id}`)
+    
 
-    if(cartItems.length==0){
+
+    if (loading) {
+        return(
+
+            <div className="LoadingContainer">
+                <h1>Loading<span>....</span></h1>
+            </div>
+
+        )
+    }
+
+    if(error){
+        return(
+
+            <div className="errorContainer">
+                <div className="errMsg">
+                    <h1><span>Error: </span>{error}</h1>
+                </div>
+            </div>
+        )
+    }
+
+    if(data.length==0){
         return(
             <div className="emptyContainer">
                 <div className="emptyImg">
@@ -35,13 +58,13 @@ function CartDetail(){
         
             <div className="detailsContainer">
                 <div className="detailsImg">
-                    <img src={Details.thumbnail} alt=""  />
+                    <img src={data.thumbNail} alt=""  />
                 </div>
                 <div className="detailsInfo">
-                    <h1>Product Name: {Details.title}</h1>
-                    <div className="description"><h1>Description: </h1><h2>{Details.description}</h2></div>
-                    <h1>Price: {Details.price}</h1>
-                    <h1>Rating: {Details.rating}</h1>
+                    <h1>Product Name: {data.title}</h1>
+                    <div className="description"><h1>Description: </h1><h2>{data.description}</h2></div>
+                    <h1>Price: {data.price}</h1>
+                    <h1>Rating: {data.rating}</h1>
                 </div>
                 
             </div>

@@ -5,6 +5,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
+import useFetchProducts from '../utils/useFetchProducts';
 
 
 
@@ -12,6 +13,7 @@ function Header() {
 
 
     const cartItems = useSelector((store)=>store.cart.items);
+    const {data,loading,error} = useFetchProducts("http://localhost:3000/api/cart");
 
 
 
@@ -55,7 +57,7 @@ function Header() {
 
                 <Link to="/Cart">
                     <div className="cartIcon">
-                        <h3>{cartItems.length}</h3>
+                        <h3>{data.length}</h3>
                         <FontAwesomeIcon icon={faCartShopping} style={{width:"35px", height:"35px", color:"yellowgreen"}}/>
                     </div>
                 </Link>

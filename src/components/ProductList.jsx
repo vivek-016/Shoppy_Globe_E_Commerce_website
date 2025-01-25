@@ -11,7 +11,7 @@ function ProductList() {
 
     
     
-    const {data,loading,error} = useFetchProducts("https://dummyjson.com/products");
+    const {data,loading,error} = useFetchProducts("http://localhost:3000/api/products");
 
     
     const [text,setText]=useState('');
